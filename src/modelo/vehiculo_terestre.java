@@ -40,6 +40,7 @@ public class vehiculo_terestre extends vehiculo {
     }
     @Override
      public void encender(){
+      System.out.println();
       System.out.println("Motor: "+getMotor());}
     @Override
     public void apagar (){}

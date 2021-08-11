@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package vista;
+import javax.swing.JOptionPane;
+import javax.swing.SingleSelectionModel;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -14,9 +18,36 @@ public class frm_vehiculo extends javax.swing.JFrame {
     /**
      * Creates new form frm_vehiculo
      */
+    DefaultTableModel vehi;
+        DefaultTableModel moto;
+        DefaultTableModel avion;
+        DefaultTableModel heli;
     public frm_vehiculo() {
         initComponents();
+        vehi = new DefaultTableModel();
+        String encabezado[]={"Motor","Tipo de llanta","Tonelada","Peso","Modelo"};
+        vehi.setColumnIdentifiers(encabezado);
+        Tabla_auto.setModel(vehi);
+//moto
+moto = new DefaultTableModel();
+        String encabezado2[]={"Motor","Tipo de llanta","Tonelada","Peso","Modelo"};
+        moto.setColumnIdentifiers(encabezado2);
+       tabla_moto.setModel( moto);
+        ////////avion
+        avion = new DefaultTableModel();
+        String encabezado3[]={"No. Asientos","No. pasajeros","Tipo de llantas","motor","modelo"};
+        avion.setColumnIdentifiers(encabezado3);
+        tabla_heli.setModel(avion);
+       
+
+//helicoptero
+        heli = new DefaultTableModel();
+        String encabezado4[]={"No. Asientos","No. pasajeros","Tipo de llantas","motor","modelo"};
+        heli.setColumnIdentifiers(encabezado4);
+       tabla_avion.setModel(heli);
+
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,21 +58,338 @@ public class frm_vehiculo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        btn_agregar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lb_motor = new javax.swing.JLabel();
+        txt_motor = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txt_tll = new javax.swing.JTextField();
+        lb_toneladas = new javax.swing.JLabel();
+        txt_tonelada = new javax.swing.JTextField();
+        lb_peso = new javax.swing.JLabel();
+        txt_peso = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txt_modelo = new javax.swing.JTextField();
+        cbx_terrestre = new javax.swing.JComboBox<>();
+        lb_aereo = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txt_asientos = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        lb_pasajeros = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txt_pasajeros = new javax.swing.JTextField();
+        lb_tllanta = new javax.swing.JLabel();
+        txt_tllanta = new javax.swing.JTextField();
+        lb_Vmotor = new javax.swing.JLabel();
+        txt_Vmotor = new javax.swing.JTextField();
+        lb_Vmodelo = new javax.swing.JLabel();
+        txt_Vmodelo = new javax.swing.JTextField();
+        cbx_aereo = new javax.swing.JComboBox<>();
+        tabla_auto = new javax.swing.JTabbedPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Tabla_auto = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tabla_moto = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tabla_heli = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tabla_avion = new javax.swing.JTable();
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btn_agregar.setText("Agregar");
+        btn_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Vehiculo Terrestre");
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Registro de Vehiculos Terrestres o Aereos");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        lb_motor.setText("Motor ");
+
+        jLabel3.setText("Tipo de llanta ");
+
+        lb_toneladas.setText("Toneladas");
+
+        lb_peso.setText("Peso");
+
+        jLabel4.setText("Modelo");
+
+        cbx_terrestre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Automovil", "Moto" }));
+
+        lb_aereo.setText("Vehiculo Aereo");
+
+        jLabel5.setText("No. Asientos ");
+
+        lb_pasajeros.setText("No. pasajeros");
+
+        lb_tllanta.setText("Tipo de llanta");
+
+        lb_Vmotor.setText("Motor");
+
+        lb_Vmodelo.setText("Modelo");
+
+        cbx_aereo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Avion", "Helicoptero" }));
+
+        Tabla_auto.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(Tabla_auto);
+
+        tabla_auto.addTab("Automivil", jScrollPane1);
+
+        tabla_moto.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane3.setViewportView(tabla_moto);
+
+        tabla_auto.addTab("Moto", jScrollPane3);
+
+        tabla_heli.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane5.setViewportView(tabla_heli);
+
+        tabla_auto.addTab("Helicoptero", jScrollPane5);
+
+        tabla_avion.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(tabla_avion);
+
+        tabla_auto.addTab("Avion", jScrollPane4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lb_motor)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_motor, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lb_toneladas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_tll, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                            .addComponent(txt_tonelada)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lb_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(txt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cbx_terrestre, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txt_asientos, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lb_pasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel6)
+                                        .addComponent(lb_tllanta)
+                                        .addComponent(jLabel8))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txt_tllanta, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(txt_pasajeros)
+                                            .addGap(3, 3, 3)))))
+                            .addGap(53, 53, 53))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lb_Vmotor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txt_Vmotor, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lb_Vmodelo)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txt_Vmodelo)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(cbx_aereo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(0, 0, Short.MAX_VALUE)))))
+                            .addContainerGap()))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lb_aereo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(114, 114, 114))))
+            .addComponent(tabla_auto, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(174, 174, 174)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(257, 257, 257)
+                        .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_aereo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lb_motor)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txt_motor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_asientos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txt_tll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(lb_pasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_pasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lb_toneladas)
+                    .addComponent(txt_tonelada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(lb_tllanta, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_tllanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lb_peso)
+                    .addComponent(txt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_Vmotor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_Vmotor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txt_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_Vmodelo)
+                    .addComponent(txt_Vmodelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbx_terrestre, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbx_aereo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(tabla_auto, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
+        // TODO add your handling code here:
+        String datos[] = new String[6];
+        datos[0] = txt_motor.getText();
+        datos[1] = txt_tllanta.getText();
+        datos[2] = txt_tonelada.getText();
+        datos[3] = txt_peso.getText();
+        datos[4] = txt_modelo.getText();
+        datos[5] = cbx_terrestre.getSelectedItem().toString();
+       vehi.addRow(datos);
+       JOptionPane.showMessageDialog(rootPane, "Ingreso Correcto","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+       
+       String datos1[] = new String[5];
+        datos1[0] = txt_asientos.getText();
+        datos1[1]= txt_pasajeros.getText();
+        datos1[2] = txt_tllanta.getText();
+        datos1[3] = txt_Vmotor.getText();
+        datos1[4] = txt_Vmodelo.getText();
+
+       avion.addRow(datos1);
+       
+        String datos2[] = new String[5];
+        datos2[0] = txt_asientos.getText();
+        datos2[1]= txt_pasajeros.getText();
+        datos2[2] = txt_tllanta.getText();
+        datos2[3] = txt_Vmotor.getText();
+        datos[4] = txt_Vmodelo.getText();
+
+       heli.addRow(datos2);
+       
+       String datos3[] = new String[5];
+        datos3[0] = txt_asientos.getText();
+        datos3[1]= txt_pasajeros.getText();
+        datos3[2] = txt_tllanta.getText();
+        datos3[3] = txt_Vmotor.getText();
+        datos3[4] = txt_Vmodelo.getText();
+
+       moto.addRow(datos3);
+    }//GEN-LAST:event_btn_agregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +427,44 @@ public class frm_vehiculo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Tabla_auto;
+    private javax.swing.JButton btn_agregar;
+    private javax.swing.JComboBox<String> cbx_aereo;
+    private javax.swing.JComboBox<String> cbx_terrestre;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JLabel lb_Vmodelo;
+    private javax.swing.JLabel lb_Vmotor;
+    private javax.swing.JLabel lb_aereo;
+    private javax.swing.JLabel lb_motor;
+    private javax.swing.JLabel lb_pasajeros;
+    private javax.swing.JLabel lb_peso;
+    private javax.swing.JLabel lb_tllanta;
+    private javax.swing.JLabel lb_toneladas;
+    private javax.swing.JTabbedPane tabla_auto;
+    private javax.swing.JTable tabla_avion;
+    private javax.swing.JTable tabla_heli;
+    private javax.swing.JTable tabla_moto;
+    private javax.swing.JTextField txt_Vmodelo;
+    private javax.swing.JTextField txt_Vmotor;
+    private javax.swing.JTextField txt_asientos;
+    private javax.swing.JTextField txt_modelo;
+    private javax.swing.JTextField txt_motor;
+    private javax.swing.JTextField txt_pasajeros;
+    private javax.swing.JTextField txt_peso;
+    private javax.swing.JTextField txt_tll;
+    private javax.swing.JTextField txt_tllanta;
+    private javax.swing.JTextField txt_tonelada;
     // End of variables declaration//GEN-END:variables
 }
